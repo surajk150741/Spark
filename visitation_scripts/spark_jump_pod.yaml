@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: spark-jump-pod
+  namespace: spark
+spec:
+  serviceAccountName: spark
+  containers:
+  -  image: dataengineeringe2e/spark-ubuntu-3.0.1
+     name: spark-jump-pod
+     command: ["bash"]
+     args: ["-c", "while true; do echo hello; sleep 10;done"]
+     imagePullPolicy: Always
+
+     
